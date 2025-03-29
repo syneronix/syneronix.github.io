@@ -25,6 +25,29 @@ fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;600&dis
 fontLink.rel = "stylesheet";
 document.head.appendChild(fontLink);
 
+// Когда DOM готов — загружаем header и footer
+document.addEventListener("DOMContentLoaded", () => {
+  const basePath = window.location.pathname.includes("gallery") || window.location.pathname.includes("privacy")
+    ? "../"
+    : "";
+
+  // Загружаем header
+  fetch(basePath + "parts/header.html")
+    .then(res => res.text())
+    .then(data => {
+      const header = document.getElementById("header");
+      if (header) header.innerHTML = data;
+    });
+
+  // Загружаем footer
+  fetch(basePath + "parts/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      const footer = document.getElementById("footer");
+      if (footer) footer.innerHTML = data;
+    });
+});
+
 // Анимация появления изображений в галерее
 function revealGalleryImages() {
   const images = document.querySelectorAll(".gallery img");
@@ -46,7 +69,7 @@ function revealGalleryImages() {
   });
 }
 
-// После загрузки страницы
+// После полной загрузки страницы
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
   revealGalleryImages();
