@@ -69,6 +69,26 @@ function revealGalleryImages() {
   });
 }
 
+// Lightbox просмотр изображения
+document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = lightbox.querySelector("img");
+  
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.classList.add("active");
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+  
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.remove("active");
+      lightboxImg.src = "";
+    });
+  });
+  
+
 // После полной загрузки страницы
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
