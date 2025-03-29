@@ -1,0 +1,53 @@
+// Добавляем favicon
+const favicon = document.createElement("link");
+favicon.rel = "icon";
+favicon.type = "image/x-icon";
+favicon.href = window.location.pathname.includes("gallery") || window.location.pathname.includes("privacy")
+  ? "../favicon.ico"
+  : "favicon.ico";
+document.head.appendChild(favicon);
+
+// Добавляем мета viewport
+const viewport = document.createElement("meta");
+viewport.name = "viewport";
+viewport.content = "width=device-width, initial-scale=1.0";
+document.head.appendChild(viewport);
+
+// Добавляем мета-описание
+const description = document.createElement("meta");
+description.name = "description";
+description.content = "Официальный сайт проекта Syneronix.";
+document.head.appendChild(description);
+
+// Добавляем Google Fonts
+const fontLink = document.createElement("link");
+fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap";
+fontLink.rel = "stylesheet";
+document.head.appendChild(fontLink);
+
+// Анимация появления изображений в галерее
+function revealGalleryImages() {
+  const images = document.querySelectorAll(".gallery img");
+  const options = {
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  images.forEach(img => {
+    observer.observe(img);
+  });
+}
+
+// После загрузки страницы
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+  revealGalleryImages();
+});
