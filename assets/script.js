@@ -46,6 +46,17 @@ function revealGalleryImages() {
   });
 }
 
+const basePath = window.location.pathname.includes("gallery") || window.location.pathname.includes("privacy") ? "../" : "";
+
+fetch(basePath + "parts/header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch(basePath + "parts/footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+
 // После загрузки страницы
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
