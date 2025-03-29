@@ -2,44 +2,18 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Syneronix Gallery</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    
-  </style>
+  <title>Syneronix</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/script.js"></script>
 </head>
 <body>
-  <h1>Добро пожаловать в галерею Syneronix</h1>
-  <h1>Test update</h1>
-  <div class="gallery">
-    <img src="https://via.placeholder.com/300x200.png?text=Фото+1" alt="Фото 1" />
-    <img src="https://via.placeholder.com/300x200.png?text=Фото+2" alt="Фото 2" />
-    <img src="https://via.placeholder.com/300x200.png?text=Фото+3" alt="Фото 3" />
-  </div>
+  <div id="header"></div>
+
+  <h1>Добро пожаловать на сайт Syneronix</h1>
+  <p style="text-align: center; max-width: 600px; margin: 20px auto;">
+    Этот сайт перенесён с Google Sites и теперь работает на GitHub Pages. Здесь вы найдёте галерею, информацию о конфиденциальности и, возможно, кое-что ещё!
+  </p>
+
+  <div id="footer"></div>
 </body>
 </html>
