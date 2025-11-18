@@ -2,7 +2,7 @@
 const favicon = document.createElement("link");
 favicon.rel = "icon";
 favicon.type = "image/x-icon";
-favicon.href = window.location.pathname.includes("gallery") || window.location.pathname.includes("privacy")
+favicon.href = window.location.pathname.includes("gallery") || window.location.pathname.includes("privacy") || window.location.pathname.includes("terms")
   ? "../favicon.ico"
   : "favicon.ico";
 document.head.appendChild(favicon);
@@ -27,7 +27,7 @@ document.head.appendChild(fontLink);
 
 // Когда DOM готов — загружаем header и footer
 document.addEventListener("DOMContentLoaded", () => {
-  const basePath = window.location.pathname.includes("gallery") || window.location.pathname.includes("privacy")
+  const basePath = window.location.pathname.includes("gallery") || window.location.pathname.includes("privacy") || window.location.pathname.includes("terms")
     ? "../"
     : "";
 
