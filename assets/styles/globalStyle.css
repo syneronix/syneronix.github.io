@@ -194,3 +194,15 @@ html {
     border-bottom: none; /* Убираем линию */
 }
 
+.force-yellow-link,
+.force-yellow-link:link,
+.force-yellow-link:visited,
+.force-yellow-link:active {
+    color: #EEB82E !important; 
+    text-decoration: none !important; 
+}
+
+.force-yellow-link:hover {
+    color: #FFD700 !important; 
+    text-decoration: underline !important;
+}
