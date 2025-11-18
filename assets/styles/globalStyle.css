@@ -1,5 +1,5 @@
 :root {
-  --bg-color:     #1E2026;
+  --bg-color:     #000000;
   --text-color:   #e0e0e0;
   --primary-color:#1f6feb;
   --nav-bg:       #1a1a1a;
@@ -56,6 +56,11 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 15px;
+}
+
+.optionListItem {
+    color: var(--yellow_main); 
+    font-weight: bold; /
 }
 
 .gallery img {
