@@ -90,6 +90,16 @@ h1 {
 
 }
 
+.center-horizontal {
+    /* Для строчного контента (текст, ссылки) */
+    text-align: center;
+    
+    /* Для блочных элементов (div, секции) */
+    display: flex;
+    justify-content: center; /* Центрирует дочерние элементы по горизонтали */
+    /* Важно: НЕ используем align-items: center; */
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -118,3 +128,69 @@ html {
   max-height: 90%;
   border-radius: 10px;
 }
+
+
+/* Main page */
+
+.center-page-content {
+    min-height: calc(100vh - [высота header] - [высота footer]);
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+#crypto-book-details {
+    max-width: 1000px;
+    width: 90%;
+}
+
+
+.crypto-card {
+    max-width: 900px; 
+    background-color: #1a1a1a;
+    color: #f0f0f0; 
+    padding: 30px;
+    margin: 40px auto; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+}
+
+
+.crypto-card h2 {
+    color: #EEB82E; 
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(238, 184, 46, 0.3); 
+    padding-bottom: 10px;
+}
+
+.crypto-card p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.conclusion-style {
+    max-width: 900px;
+    
+    /* Удаляем сплошной фон и заменяем его на рамку */
+    background-color: transparent; /* Делаем фон прозрачным */
+    border: 2px solid #EEB82E; /* Добавляем рамку вашего акцентного цвета */
+    
+    color: #f0f0f0; 
+    padding: 30px;
+    margin: 40px auto; 
+    border-radius: 8px;
+    
+    /* Убираем тень, чтобы сделать ее легче */
+    box-shadow: none; 
+}
+
+/* Стили заголовка остаются прежними, но нужно убрать нижнюю границу */
+.conclusion-style h2 {
+    color: #EEB82E;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: none; /* Убираем линию */
+}
+
