@@ -213,3 +213,13 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+
+#footer_main_id {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+#footer_main_id p {
+    margin-right: 50px; 
+}
