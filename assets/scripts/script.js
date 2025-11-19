@@ -1,27 +1,22 @@
-// Добавляем все иконки и манифест
-const basePath = window.location.pathname.includes("gallery") || window.location.pathname.includes("privacy") || window.location.pathname.includes("terms")
-  ? "../"
-  : "";
-
 const head = document.head;
 
 const favicon = document.createElement("link");
 favicon.rel = "icon";
 favicon.type = "image/x-icon";
-favicon.href = basePath + "favicon.ico";
+favicon.href = "/favicon.ico"; 
 head.appendChild(favicon);
 
 
 const appleTouchIcon = document.createElement("link");
 appleTouchIcon.rel = "apple-touch-icon";
 appleTouchIcon.sizes = "180x180";
-appleTouchIcon.href = basePath + "apple-touch-icon.png";
+appleTouchIcon.href = "/apple-touch-icon.png"; 
 head.appendChild(appleTouchIcon);
 
 
 const manifest = document.createElement("link");
 manifest.rel = "manifest";
-manifest.href = basePath + "site.webmanifest";
+manifest.href = "/site.webmanifest"; 
 head.appendChild(manifest);
 
 
@@ -41,31 +36,22 @@ fontLink.rel = "stylesheet";
 head.appendChild(fontLink);
 
 
-// Когда DOM готов — загружаем header и footer
 document.addEventListener("DOMContentLoaded", () => {
-  const basePath = window.location.pathname.includes("gallery") || window.location.pathname.includes("privacy") || window.location.pathname.includes("terms")
-    ? "../"
-    : "";
+    fetch("/parts/header.html") 
+        .then(res => res.text())
+        .then(data => {
+            const header = document.getElementById("header");
+            if (header) header.innerHTML = data;
+        });
 
-  // Загружаем header
-  fetch(basePath + "parts/header.html")
-    .then(res => res.text())
-    .then(data => {
-      const header = document.getElementById("header");
-      if (header) header.innerHTML = data;
-    });
-
-  // Загружаем footer
-  fetch(basePath + "parts/footer.html")
-    .then(res => res.text())
-    .then(data => {
-      const footer = document.getElementById("footer");
-      if (footer) footer.innerHTML = data;
-    });
+    fetch("/parts/footer.html")
+        .then(res => res.text())
+        .then(data => {
+            const footer = document.getElementById("footer");
+            if (footer) footer.innerHTML = data;
+        });
 });
 
-
-
 window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
+    document.body.classList.add("loaded");
 });
