@@ -1,15 +1,16 @@
 :root {
-  --bg-color:     #000000;
-  --text-color:   #e0e0e0;
-  --primary-color:#1f6feb;
-  --nav-bg:       #1a1a1a;
-  --footer-bg:    #1e1e1e;
-  --yellow_main:  #EEB82E;
-  --gray_main:    #e3e5f1;
+  --bg-color: #000000;
+  --text-color: #e0e0e0;
+  --primary-color: #1f6feb;
+  --nav-bg: #1a1a1a;
+  --footer-bg: #1e1e1e;
+  --yellow_main: #EEB82E;
+  --gray_main: #e3e5f1;
 }
 
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -27,6 +28,7 @@ body {
   opacity: 0;
   transition: opacity 0.6s ease;
 }
+
 body.loaded {
   opacity: 1;
 }
@@ -59,8 +61,8 @@ h1 {
 }
 
 .optionListItem {
-    color: var(--yellow_main); 
-    font-weight: bold; /
+  color: var(--yellow_main);
+  font-weight: bold;/
 }
 
 .gallery img {
@@ -70,9 +72,11 @@ h1 {
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
+
 .gallery img:hover {
   transform: scale(1.05);
 }
+
 .gallery img.visible {
   opacity: 1;
   transform: translateY(0);
@@ -91,13 +95,10 @@ h1 {
 }
 
 .center-horizontal {
-    /* Для строчного контента (текст, ссылки) */
-    text-align: center;
-    
-    /* Для блочных элементов (div, секции) */
-    display: flex;
-    justify-content: center; /* Центрирует дочерние элементы по горизонтали */
-    /* Важно: НЕ используем align-items: center; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
 }
 
 
@@ -108,8 +109,10 @@ html {
 
 .lightbox {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
@@ -119,10 +122,12 @@ html {
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
+
 .lightbox.active {
   opacity: 1;
   pointer-events: auto;
 }
+
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
@@ -133,76 +138,78 @@ html {
 /* Main page */
 
 .center-page-content {
-    min-height: calc(100vh - [высота header] - [высота footer]);
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+  min-height: calc(100vh - [высота header] - [высота footer]);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #crypto-book-details {
-    max-width: 1000px;
-    width: 90%;
+  max-width: 1000px;
+  width: 90%;
 }
 
 
 .crypto-card {
-    max-width: 900px; 
-    background-color: #1a1a1a;
-    color: #f0f0f0; 
-    padding: 30px;
-    margin: 40px auto; 
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+  max-width: 900px;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 
 .crypto-card h2 {
-    color: #EEB82E; 
-    font-size: 1.6em;
-    margin-top: 0;
-    margin-bottom: 15px;
-    border-bottom: 2px solid rgba(238, 184, 46, 0.3); 
-    padding-bottom: 10px;
+  color: #EEB82E;
+  font-size: 1.6em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgba(238, 184, 46, 0.3);
+  padding-bottom: 10px;
 }
 
 .crypto-card p {
-    font-size: 1em;
-    line-height: 1.6;
+  font-size: 1em;
+  line-height: 1.6;
 }
 
 .conclusion-style {
-    max-width: 900px;
-    
-    /* Удаляем сплошной фон и заменяем его на рамку */
-    background-color: transparent; /* Делаем фон прозрачным */
-    border: 2px solid #EEB82E; /* Добавляем рамку вашего акцентного цвета */
-    
-    color: #f0f0f0; 
-    padding: 30px;
-    margin: 40px auto; 
-    border-radius: 8px;
-    
-    /* Убираем тень, чтобы сделать ее легче */
-    box-shadow: none; 
+  max-width: 900px;
+  background-color: transparent;
+  border: 2px solid #EEB82E;
+  color: #f0f0f0;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 8px;
+  box-shadow: none;
 }
 
-/* Стили заголовка остаются прежними, но нужно убрать нижнюю границу */
+
 .conclusion-style h2 {
-    color: #EEB82E;
-    margin-top: 0;
-    margin-bottom: 15px;
-    border-bottom: none; /* Убираем линию */
+  color: #EEB82E;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: none;
 }
 
 .force-yellow-link,
 .force-yellow-link:link,
 .force-yellow-link:visited,
 .force-yellow-link:active {
-    color: #EEB82E !important; 
-    text-decoration: none !important; 
+  color: #EEB82E !important;
+  text-decoration: none !important;
 }
 
 .force-yellow-link:hover {
-    color: #FFD700 !important; 
-    text-decoration: underline !important;
+  color: #FFD700 !important;
+  text-decoration: underline !important;
+}
+
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

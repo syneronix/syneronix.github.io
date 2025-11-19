@@ -90,7 +90,3 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
 // После полной загрузки страницы
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-  revealGalleryImages();
-});
