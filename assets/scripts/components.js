@@ -89,7 +89,7 @@ class PrivacySectionCard extends HTMLElement {
                 
                 /* Главный заголовок (для первой карточки) */
                 ::slotted(.main-title) {
-                    color: white;
+                    color: var(--yellow_main, #EEB82E);
                     text-align: center;
                     margin-bottom: 5px;
                     font-size: 2.2em;
