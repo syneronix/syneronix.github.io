@@ -48,45 +48,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Анимация появления изображений в галерее
-function revealGalleryImages() {
-  const images = document.querySelectorAll(".gallery img");
-  const options = {
-    threshold: 0.1,
-  };
+// // Анимация появления изображений в галерее
+// function revealGalleryImages() {
+//   const images = document.querySelectorAll(".gallery img");
+//   const options = {
+//     threshold: 0.1,
+//   };
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        obs.unobserve(entry.target);
-      }
-    });
-  }, options);
+//   const observer = new IntersectionObserver((entries, obs) => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         entry.target.classList.add("visible");
+//         obs.unobserve(entry.target);
+//       }
+//     });
+//   }, options);
 
-  images.forEach(img => {
-    observer.observe(img);
-  });
-}
+//   images.forEach(img => {
+//     observer.observe(img);
+//   });
+// }
 
-// Lightbox просмотр изображения
-document.addEventListener("DOMContentLoaded", () => {
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = lightbox.querySelector("img");
+// // Lightbox просмотр изображения
+// document.addEventListener("DOMContentLoaded", () => {
+//     const lightbox = document.getElementById("lightbox");
+//     const lightboxImg = lightbox.querySelector("img");
   
-    document.querySelectorAll(".gallery img").forEach(img => {
-      img.addEventListener("click", () => {
-        lightbox.classList.add("active");
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-      });
-    });
+//     document.querySelectorAll(".gallery img").forEach(img => {
+//       img.addEventListener("click", () => {
+//         lightbox.classList.add("active");
+//         lightboxImg.src = img.src;
+//         lightboxImg.alt = img.alt;
+//       });
+//     });
   
-    lightbox.addEventListener("click", () => {
-      lightbox.classList.remove("active");
-      lightboxImg.src = "";
-    });
-  });
+//     lightbox.addEventListener("click", () => {
+//       lightbox.classList.remove("active");
+//       lightboxImg.src = "";
+//     });
+//   });
   
 
 // После полной загрузки страницы

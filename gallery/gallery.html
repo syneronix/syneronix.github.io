@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Gallery</title>
-  <link rel="stylesheet" href="../assets/styles/globalStyle.css" />
-  <script defer src="../assets//scripts/script.js"></script>
+    <meta charset="UTF-8" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="../assets/styles/globalStyle.css" />
+    <link rel="stylesheet" href="../assets/styles/gallery.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="../assets/scripts/script.js"></script>
+    <script defer src="../assets/scripts/gallery.js"></script>
 </head>
+
+
 <body>
-  <div id="header"></div>
+    <div id="header"></div>
 
-  <main>
-    <h1>Gallery</h1>
-    <div class="gallery">
-      <img src="images/coin add.png" alt="coin add" />
-      <img src="images/coin details.png" alt="coin details" />
-      <img src="images/coin found.png" alt="coin found" />
-      <img src="images/coin list full.png" alt="coin list" />
-      <img src="images/transaction add.png" alt="transaction add" />
-      <img src="images/transaction sell.png" alt="transaction sell" />
-      <img src="images/transactions.png" alt="transactions" />
-    </div>
-    
-    <div class="lightbox" id="lightbox">
-      <img src="" alt="Просмотр" />
-    </div>
-    
-  </main>
-  
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold mb-8 pt-8 text-center text-amber-500">Скриншоты приложения</h1>
+        <div id="gallery-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 pb-8">
+             <img class="gallery-item rounded-lg shadow-xl" src="images/coin add.png" alt="coin add" />
+            <img class="gallery-item rounded-lg shadow-xl" src="images/coin details.png" alt="coin details" />
+            <img class="gallery-item rounded-lg shadow-xl" src="images/coin found.png" alt="coin found" />
+            <img class="gallery-item rounded-lg shadow-xl" src="images/coin list full.png" alt="coin list" />
+            <img class="gallery-item rounded-lg shadow-xl" src="images/transaction add.png" alt="transaction add" />
+            <img class="gallery-item rounded-lg shadow-xl" src="images/transaction sell.png" alt="transaction sell" />
+            <img class="gallery-item rounded-lg shadow-xl" src="images/transactions.png" alt="transactions" />
+        </div>
 
-  <div id="footer"></div>
+        <div class="lightbox" id="lightbox">
+            <img id="lightbox-image" class="lightbox-content" src="" alt="Zoomed image" />
+        </div>
+
+    </main>
+
+    <div id="footer"></div>
+
 </body>
+
 </html>
