@@ -17,8 +17,6 @@ body {
 }
 
 body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 
   font-family: 'Inter', sans‑serif;
@@ -35,7 +33,11 @@ body.loaded {
 
 
 header {
-  grid-row: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   background-color: var(--nav-bg);
   color: var(--text-color);
   padding: 15px 20px;
@@ -43,10 +45,11 @@ header {
 
 
 main {
-  grid-row: 2;
-  padding: 20px;
+  padding-top: 60px;
+  padding-bottom: 90px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-
 
 h1 {
   text-align: center;
@@ -62,7 +65,7 @@ h1 {
 
 .optionListItem {
   color: var(--yellow_main);
-  font-weight: bold;/
+  font-weight: bold;
 }
 
 .gallery img {
@@ -215,49 +218,69 @@ body {
 }
 
 #footer_main_id {
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #footer_main_id p {
-    margin-right: 50px; 
+  margin-right: 50px;
 }
 
 
 .crypto-card {
-    max-width: 900px;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-    padding: 30px;
-    margin: 40px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    
+  max-width: 900px;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 
-    display: flex;
-    align-items: flex-start; 
-    gap: 30px; 
+
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
 }
 
 #intro-card #crypto_book_image {
-    flex-shrink: 0; 
-    width: 200px; 
+  flex-shrink: 0;
+  width: 200px;
 }
 
 
 #intro-card .text-content {
-    flex-grow: 1; 
+  flex-grow: 1;
 }
 
 
 @media (max-width: 600px) {
-    .crypto-card {
-        flex-direction: column;
-        align-items: center; 
-        text-align: center;
-    }
-    #intro-card #crypto_book_image {
-        margin-bottom: 20px;
-    }
+  .crypto-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #intro-card #crypto_book_image {
+    margin-bottom: 20px;
+  }
+}
+
+#footer_main_id {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+
+  text-align: center;
+  padding: 15px;
+  background-color: var(--footer-bg);
+  color: var(--text-color);
+
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
